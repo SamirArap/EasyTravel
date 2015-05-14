@@ -1,0 +1,17 @@
+<div class="container">
+	<h2>New Subject</h2>
+	<div class="jumbotron">
+
+		<%= form_for(:subject, :url => {:action => 'create'}) do |f|%>
+
+			<%= render(:partial => 'form', :locals => {:f => f})%>
+
+			
+				<div class="row">
+					<div class="col-md-6"><%= submit_tag "Add New Subject", :class => "btn btn-default btn-block" %></div>
+					<div class="col-md-6"><%= link_to "Back", {:action => 'index'}, :class => "btn btn-default btn-block" %></div>
+					
+				</div>
+		<%end%>
+	</div>
+</div>

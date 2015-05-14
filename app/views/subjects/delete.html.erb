@@ -1,0 +1,8 @@
+<div class="container">
+	<h2>Are you sure?</h2>
+
+	<%= form_for(:subject, :url => {:action => 'destroy', :id => @subject.id }) do %>
+		<p>You want delete <%= @subject.name %></p>
+		
+		<%= submit_tag "Delete" %>
+	<% end %>

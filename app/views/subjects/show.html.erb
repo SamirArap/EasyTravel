@@ -1,0 +1,16 @@
+<div class="container">
+	<h2>Show Subject</h2>
+	<div class="jumbotron">
+		<div class="row">
+				<div class="col-md-4"><%= image_tag(@subject.logo, :class => "img-circle", size: "480x320") %></div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">Name: <h2><%= @subject.name %></h2></div>
+		</div>
+		<br>
+		<div class="row">
+				<div class="col-sm-4"><%= link_to "Edit", {:action => 'edit', :id => @subject.id}, :class => "btn btn-default btn-block" %></div>
+				<div class="col-sm-4"><%= link_to "Destroy", {:action => 'delete', :id => @subject.id}, :class => "btn btn-default btn-block" %></div>
+				<div class="col-sm-4"><%= link_to "Back", {:action => 'index', :id => @subject.id}, :class => "btn btn-default btn-block" %></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+// Place all the styles related to the Public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+header {
+	background: #2C3E50;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	height: 130px;
+	padding: 5px
+}
+
+.stomac {
+	margin-top: 60px;
+	background-color: #EBECEC;
+	padding: 50px
+}

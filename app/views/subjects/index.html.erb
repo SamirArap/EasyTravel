@@ -1,0 +1,17 @@
+<div class="container">
+	<p><%= link_to "Back", {:controller => 'public', :action => 'index'} %></p>
+	<p><%= link_to "New Subject", {:action => 'new'} %></p>
+
+	<table>
+		<% @subjects.each do |subject| %>
+		<tr class="row">
+    		<div class="col-lg-2">
+				<%= image_tag(subject.logo, :class => "img-circle", size: "180x140") %>
+      			<center><h2><%= link_to subject.name, {:action => 'show', :id => subject.id } %></h2></center>
+			</div>
+		</tr>
+		<%end%>
+	</table>
+
+	
+</div>
