@@ -1,8 +1,17 @@
-<div class="container">
-	<h2>Are you sure?</h2>
+<% @page_title = 'Delete Subject'%>
 
-	<%= form_for(:subject, :url => {:action => 'destroy', :id => @subject.id }) do %>
-		<p>You want delete <%= @subject.name %></p>
-		
-		<%= submit_tag "Delete" %>
-	<% end %>
+<% if current_user.email == @subject.user.email %>
+	<div class="container">
+		<h2>Are you sure?</h2>
+
+		<%= form_for(:subject, :url => {:action => 'destroy', :id => @subject.id }) do %>
+			<p>You want delete <%= @subject.name %></p>
+			
+			<%= submit_tag "Delete" %>
+		<% end %>
+	</div>
+<%else%>
+	<script>
+		window.location.replace("http://stackoverflow.com")
+	</script>
+<%end%>
