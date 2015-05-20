@@ -6,6 +6,11 @@
 	<div class="col-md-2"><%= f.label :logo %></div>
 	<div class="col-md-10"><%= f.text_field :logo, :class => "form-control", :placeholder => 'http://link_fo_logo.jpg or png, gif ...' %></div>		
 </div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :position %></div>
+	<div class="col-md-10"><%= f.select :position, 1..@subject_count %></div>
+</div>
+
 <div class="row">		
 	<div class="col-md-2"><%= f.label :visible %></div>
 	<div class="col-md-10"><%= f.check_box :visible %></div>

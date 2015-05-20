@@ -5,6 +5,7 @@ class CreateSubjects < ActiveRecord::Migration
     	t.string "name"
     	t.string "logo"
     	t.boolean "visible"
+    	t.integer "position"
 
       t.timestamps null: false
     end

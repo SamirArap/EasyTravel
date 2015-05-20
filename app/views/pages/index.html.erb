@@ -2,9 +2,10 @@
 
 <div class="container">
 	<div class="jumbotron">
+		<p><%= pluralize(@pages.size,'page') %></p>
 
 		<div class="row">
-			<div class="col-md-6"><%= link_to "New Page", {:action => 'new'}, :class => 'btn btn-default btn-block' %></div>
+			<div class="col-md-6"><%= link_to "New Page", {:action => 'new', :subject_id => @subject.id}, :class => 'btn btn-default btn-block' %></div>
 			<div class="col-md-6"><%= link_to "Back", {:controller => 'subjects', :action => 'index'}, :class => "btn btn-default btn-block" %></div>
 		</div>
 		<br>
@@ -18,12 +19,13 @@
 			<div class="col-md-2"><h4></h4></div>
 			<hr>
 		</div>	
+		
 		<% @pages.each do |page|%>
 		<hr>
 			<div class="row">
 				<div class="col-md-1"><%= page.position%></div>
 				<div class="col-md-2"><%= page.name %></div>
-				<div class="col-md-2"><% page.subject.name if page.subject %></div>
+				<div class="col-md-2"><%= page.subject.name if page.subject %></div>
 				<div class="col-md-3"><%= image_tag(page.permalink, :class => "img-circle", size: "160x140") %></div>
 				<div class="col-md-1"><%= status_tag(page.visible) %></div>
 				<div class="col-md-1">Number</div>
