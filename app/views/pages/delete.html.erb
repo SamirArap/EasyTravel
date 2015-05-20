@@ -3,15 +3,15 @@
 <div class="container">
 	<div class="jumbotron">
 		<h2>Are you sure?</h2>
-
-		<%= form_for(:page, :url => {:action => 'destroy', :id => @page.id}) do %>
+		
+		<%= form_for(:page, :url => {:action => 'destroy', :id => @page.id, :subject_id => @subject.id}) do |f| %>
 			
 			<p>You want delete page <strong><%= @page.name %></strong>? </p>
 			<p><%= image_tag(@page.permalink, :class => "img-circle", size: "200x200")%></p>
 
 			<div class="row">
 				<div class="col-md-6"><%= submit_tag("Delete", :class => "btn btn-default btn-block")%></div>
-				<div class="col-md-6"><%= link_to("Back", {:action => 'index'}, :class => "btn btn-default btn-block" )%></div>
+				<div class="col-md-6"><%= link_to("Back", {:controller => 'subjects', :action => 'index'}, :class => "btn btn-default btn-block" )%></div>
 			</div>
 		<%end%>
 	</div>

@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-1"><h4>Position</h4></div>
 			<div class="col-md-2"><h4>Country</h4></div>
-			<div class="col-md-2"><h4>User</h4></div>
+			<div class="col-md-2"><h4>Agency</h4></div>
 			<div class="col-md-3"><h4>Picture</h4></div>
 			<div class="col-md-1"><h4>Visible</h4></div>
 			<div class="col-md-1"><h4>Number</h4></div>
@@ -30,9 +30,9 @@
 				<div class="col-md-1"><%= status_tag(page.visible) %></div>
 				<div class="col-md-1">Number</div>
 				<div class="col-md-2">
-					<%= link_to "City", {:action => 'index'}, :class => "btn btn-default btn-block"%>
-					<%= link_to "Edit", {:action => 'edit', :id => page.id}, :class => "btn btn-default btn-block" %>
-					<%= link_to "Delete", {:action => 'delete', :id => page.id}, :class => "btn btn-default btn-block" %>
+					<%= link_to("City", {:action => 'index'}, :class => "btn btn-default btn-block")%>
+					<%= link_to("Edit", {:action => 'edit', :id => page.id, :subject_id => @subject.id}, :class => "btn btn-default btn-block" )%>
+					<%= link_to("Delete", {:action => 'delete', :id => page.id, :subject_id => @subject.id}, :class => "btn btn-default btn-block") %>
 				</div>
 			</div>
 			

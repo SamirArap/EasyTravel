@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520091841) do
+ActiveRecord::Schema.define(version: 20150520094941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,24 @@ ActiveRecord::Schema.define(version: 20150520091841) do
 
   add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
   add_index "pages", ["subject_id"], name: "index_pages_on_subject_id", using: :btree
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "page_id"
+    t.integer  "position"
+    t.string   "permalink"
+    t.string   "name"
+    t.string   "departure"
+    t.string   "return"
+    t.decimal  "price"
+    t.string   "trip"
+    t.string   "tip"
+    t.boolean  "visible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sections", ["page_id"], name: "index_sections_on_page_id", using: :btree
+  add_index "sections", ["permalink"], name: "index_sections_on_permalink", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"

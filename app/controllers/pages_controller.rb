@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   #before_action :set_page, :only [:show, :edit, :update, :delete, :destroy] 
   
   def index
-    @pages = @subject.pages.all
+    @pages = @subject.pages.sorted
   end
 
   def show
@@ -31,7 +31,6 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
-    #@subjects = Subject.order('position ASC')
     @subjects = Subject.order('position ASC')
     @page_count = Page.count
   end
@@ -40,7 +39,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
 
     if @page.update_attributes(page_params)
-      redirect_to(:action => 'show', :id => @page_id, :subject_id => @subject.id)
+      redirect_to(:action => 'index', :id => @page_id, :subject_id => @subject.id)
     else
       @subjects = Subject.order('position ASC')
       @page_count = Page.count
@@ -52,8 +51,8 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
   end
 
-  def desroy
-    @page = Page.find(params[:id]).desroy
+  def destroy
+    @page = Page.find(params[:id]).destroy
     redirect_to(:action => 'index', :subject_id => @subject.id)
   end
 
