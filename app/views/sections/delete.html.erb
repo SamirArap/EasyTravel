@@ -1,0 +1,18 @@
+<% @page_title = "Delete " %>
+
+<div class="container">
+	<div class="jumbotron">
+		<h2>Are you sure?</h2>
+
+		<%= form_for(:section, :url => {:action => 'destroy', :id => @section.id, :page_id => @page.id}) do |f| %>
+			
+			<p>You want delete destination <strong><%= @section.name %></strong></p>
+			<p><%= image_tag(@section.permalink, :class => "img-circle", size: '150x150') %></p>
+
+			<div class="row">
+				<div class="col-md-6"><%= submit_tag("Delete", :class => "btn btn-default btn-block") %></div>
+				<div class="col-md-6"><%= link_to("Back", {:action => 'index', :page_id => @page.id}, :class => "btn btn-default btn-block") %></div>
+			</div>
+		<%end%>
+	</div>
+</div>

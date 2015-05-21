@@ -1,0 +1,46 @@
+<% @page_title = "Section" %>
+
+<div class="container">
+	<div class="jumbotron">
+		<p>You have <%= pluralize(@sections.size, 'section')%> </p>
+
+		<div class="row">
+			<div class="col-md-6"><%= link_to("Add new destination", {:action => 'new', :page_id => @page.id}, :class => "btn btn-default btn-block")%></div>
+			<div class="col-md-6"><%= link_to("Back", {:controller => 'pages', :action => 'index',:subject_id => @page.subject_id}, :class => "btn btn-default btn-block") %></div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col-md-1"><h4>Position 		</h4></div>
+			<div class="col-md-1"><h4>Destination 	</h4></div>
+			<div class="col-md-2"><h4>Picture 		</h4></div>
+			<div class="col-md-1"><h4>Departure 	</h4></div>
+			<div class="col-md-1"><h4>Return 		</h4></div>
+			<div class="col-md-1"><h4>Price 		</h4></div>
+			<div class="col-md-1"><h4>Trip 			</h4></div>
+			<div class="col-md-1"><h4>Tip 			</h4></div>
+			<div class="col-md-1"><h4>Visible 		</h4></div>
+			<div class="col-md-2"> </div>
+		</div>
+		<% @sections.each do |section|%>
+		<hr>
+			<div class="row">
+				<div class="col-md-1"><%= section.position %></div>
+				<div class="col-md-1"><%= section.name %></div>
+				<div class="col-md-2"><%= link_to image_tag(section.permalink, :class => "img-circle", size: "120x120") %></div>
+				<div class="col-md-1"><%= section.departure %></div>
+				<div class="col-md-1"><%= section.return %></div>
+				<div class="col-md-1"><%= number_to_currency(section.price) %></div>
+				<div class="col-md-1"><%= section.trip %></div>	
+				<div class="col-md-1"><%= section.tip %></div>
+				<div class="col-md-1"><%= status_tag(section.visible) %></div>
+				<div class="col-md-2">
+					<%= link_to "Edit", {:action => 'edit', :id => section.id, :page_id => @page.id}, :class => "btn btn-default btn-block" %>
+					<%= link_to "Delete", {:action => 'delete', :id => section.id, :page_id => @page.id}, :class => "btn btn-default btn-block" %>
+				</div>			
+			</div>
+		<%end%>
+		
+	</div>
+</div>
+

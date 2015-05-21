@@ -1,0 +1,17 @@
+<% @page_title = "Edit destination"%>
+
+<div class="container">
+	<div class="jumbotron">
+		<h2>Edit destination</h2>
+
+		<%= form_for(:section, :url => {:action => 'update', :id => @section.id, :page_id => @page.id}) do |f| %>
+			
+			<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+			<div class="row">
+				<div class="col-md-6"><%= submit_tag("Edit destination", :class => "btn btn-default btn-block") %></div>
+				<div class="col-md-6"><%= link_to "Back", {:action => 'index'}, :class => "btn btn-default btn-block" %></div>
+			</div>
+		<%end%>
+	</div>
+</div>

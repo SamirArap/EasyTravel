@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-2"><%= f.label :page_id, "Page" %></div>
+	<div class="col-md-10"><%= f.text_field :page_id, :readonly => true, :class => "form-control" %></div>
+</div> 
+<div class="row">
+	<div class="col-md-2"><%= f.label :permalink %></div>
+	<div class="col-md-10"><%= f.text_field :permalink, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :name %></div>
+	<div class="col-md-10"><%= f.text_field :name, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :departure %></div>
+	<div class="col-md-10"><%= f.text_field :departure, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :return %></div>
+	<div class="col-md-10"><%= f.text_field :return, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :price %></div>
+	<div class="col-md-10"><%= f.text_field :price, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :trip %></div>
+	<div class="col-md-10"><%= f.text_field :trip, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :tip %></div>
+	<div class="col-md-10"><%= f.text_field :tip, :class => "form-control", :paceholder => "Enter position" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :position %></div>
+	<div class="col-md-10"><%= f.select :position, 1..@section_count, :class => "form-control" %></div>
+</div>
+<div class="row">
+	<div class="col-md-2"><%= f.label :visible %></div>
+	<div class="col-md-10"><%= f.check_box :visible %></div>
+</div>
