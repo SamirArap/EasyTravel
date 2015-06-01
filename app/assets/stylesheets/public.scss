@@ -4,7 +4,7 @@
 
 @import "bootstrap";
 
-header {
+.headers {
 	background: #2C3E50;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -19,12 +19,17 @@ header {
 	padding: 50px
 }
 
+
 /* status_tag */
 span.status { display: block; width: 20px; height: 20px;
   margin: 0.25em auto; padding: 0; border: 1px solid #000000; }
 span.status.true  { background: green; color: green; }
 span.status.false { background: red; color: red; }
 
+.aeroplane {
+	background: url(airport.png) no-repeat 135px 40px;
+	
+}
 
 footer {
 	position:fixed;

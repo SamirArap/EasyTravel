@@ -9,8 +9,9 @@
 			<%= render(:partial => 'form', :locals => {:f => f}) %>
 
 			<div class="row">
-				<div class="col-md-6"><%= submit_tag("Add new destination", :class => "btn btn-default btn-block")%></div>
-				<div class="col-md-6"><%= link_to("Back", {:action => 'index'}, :class => "btn btn-default btn-block")%></div>
+				<div class="col-md-4"><%= submit_tag("Add new destination", :class => "btn btn-default btn-block")%></div>
+				<div class="col-md-4"><%= link_to("Add new category",{:controller => 'category', :action => 'index'}, :class => "btn btn-default btn-block")%></div>
+				<div class="col-md-4"><%= link_to("Back", {:action => 'index', :page_id => @page.id}, :class => "btn btn-default btn-block")%></div>
 			</div>
 		<%end%>
 	</div>

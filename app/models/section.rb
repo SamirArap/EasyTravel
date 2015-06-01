@@ -1,6 +1,7 @@
 class Section < ActiveRecord::Base
 
 	belongs_to :page
+	has_many :category
 	
 
 	scope :visible, lambda { where(:visible => true)}

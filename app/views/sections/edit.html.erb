@@ -10,7 +10,7 @@
 
 			<div class="row">
 				<div class="col-md-6"><%= submit_tag("Edit destination", :class => "btn btn-default btn-block") %></div>
-				<div class="col-md-6"><%= link_to "Back", {:action => 'index'}, :class => "btn btn-default btn-block" %></div>
+				<div class="col-md-6"><%= link_to "Back", {:action => 'index', :page_id => @page.id}, :class => "btn btn-default btn-block" %></div>
 			</div>
 		<%end%>
 	</div>

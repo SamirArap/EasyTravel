@@ -31,7 +31,24 @@
 				<div class="col-md-1"><%= section.departure %></div>
 				<div class="col-md-1"><%= section.return %></div>
 				<div class="col-md-1"><%= number_to_currency(section.price) %></div>
-				<div class="col-md-1"><%= section.trip %></div>	
+				<div class="col-md-1">
+					
+					<% case section.trip %>
+						<% when "Aeroplane" %>
+							<%= image_tag("airport.png", :class => "img-circle", size: "60x60")%>
+						<% when "Bus" %>
+							<%= image_tag("bus.png", :class => "img-circle", size: "60x60")%>
+						<% when "Ship" %>
+							<%= image_tag("ship.png", :class => "img-circle", size: "60x60")%>
+						<% when "Bike" %>
+							<%= image_tag("airport.png", :class => "img-circle", size: "60x60")%>
+						<% when "Other" %>
+							<%= image_tag("airport.png", :class => "img-circle", size: "60x60")%>
+						<% else %>
+							<%= image_tag("bus.png", :class => "img-circle", size: "60x60")%>
+					<%end%>
+
+				</div>	
 				<div class="col-md-1"><%= section.tip %></div>
 				<div class="col-md-1"><%= status_tag(section.visible) %></div>
 				<div class="col-md-2">

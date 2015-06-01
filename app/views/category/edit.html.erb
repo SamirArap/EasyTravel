@@ -1,0 +1,18 @@
+<% @page_title = 'New category' %>
+
+<div class="container">
+	<div class="jumbotron">
+		<h2>Edit category</h2>
+		
+		<%= form_for(:category, :url => {:action => 'update', :id => @category.id}) do |f| %>
+		
+			<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+			<br>
+			<div class="row">
+				<div class="col-md-6"><%= submit_tag("Edit", :class => "btn btn-default btn-block")%></div>
+				<div class="col-md-6"><%= link_to "Back", {:action => 'index'}, :class => "btn btn-default btn-block"%></div>
+			</div>
+		<%end%>
+	</div>
+</div>

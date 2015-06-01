@@ -4,37 +4,54 @@
 </div> 
 <div class="row">
 	<div class="col-md-2"><%= f.label :permalink %></div>
-	<div class="col-md-10"><%= f.text_field :permalink, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-10"><%= f.text_field :permalink, :class => "form-control", :placeholder => "Enter pemalink" %></div>
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :name %></div>
-	<div class="col-md-10"><%= f.text_field :name, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-10"><%= f.text_field :name, :class => "form-control", :placeholder => "Enter city" %></div>
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :departure %></div>
-	<div class="col-md-10"><%= f.text_field :departure, :class => "form-control", :paceholder => "Enter position" %></div>
-</div>
-<div class="row">
+	<div class="col-md-4"><%= f.text_field :departure, :id => "departure", :placeholder => "Click on field" %></div>
 	<div class="col-md-2"><%= f.label :return %></div>
-	<div class="col-md-10"><%= f.text_field :return, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-4"><%= f.text_field :return, :id => "return", :placeholder => "Click on field" %></div>
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :price %></div>
-	<div class="col-md-10"><%= f.text_field :price, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-10"><%= f.text_field :price, :class => "form-control", :placeholder => "Enter price" %></div>
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :trip %></div>
-	<div class="col-md-10"><%= f.text_field :trip, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-2"><%= f.radio_button(:trip, :Aeroplane, :checked => true ,:class => "aeroplane") %> Aeroplane</div>
+	<div class="col-md-2"><%= f.radio_button(:trip, :Bus, :checked => false ,:class => "bus") %> Bus</div>
+	<div class="col-md-2"><%= f.radio_button(:trip, :Ship, :checked => false ,:class => "ship") %> Ship</div>
+	<div class="col-md-2"><%= f.radio_button(:trip, :Bike, :checked => false ,:class => "bike") %> Bike</div>
+	<div class="col-md-2"><%= f.radio_button(:trip, :Other, :checked => false ,:class => "other") %> Other</div>	
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :tip %></div>
-	<div class="col-md-10"><%= f.text_field :tip, :class => "form-control", :paceholder => "Enter position" %></div>
+	<div class="col-md-10"><%= f.select :tip, @categories.collect{|s| [s.name, s.name]} %></div>
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :position %></div>
-	<div class="col-md-10"><%= f.select :position, 1..@section_count, :class => "form-control" %></div>
-</div>
-<div class="row">
+	<div class="col-md-4"><%= f.select :position, 1..@section_count, :class => "form-control" %></div>
 	<div class="col-md-2"><%= f.label :visible %></div>
-	<div class="col-md-10"><%= f.check_box :visible %></div>
+	<div class="col-md-4"><%= f.check_box :visible %></div>
 </div>
+<br>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+	$(function() {
+	$( "#departure" ).datepicker();
+	});
+</script>
+
+<script>
+	$(function() {
+	$( "#return" ).datepicker();
+	});
+</script>

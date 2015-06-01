@@ -15,6 +15,7 @@ class SectionsController < ApplicationController
 		@section = Section.new({:page_id => @page.id})
     	@pages = Page.order('position ASC')
     	@section_count = Section.count + 1
+    	@categories = Category.all
 	end
 
 	def create
@@ -25,6 +26,7 @@ class SectionsController < ApplicationController
 	    else
 	      @pages = Page.order('position ASC')
 	      @section_count = Section.count + 1
+	      @categories = Category.all
 	      render('new')
 	    end
 	  end
@@ -33,6 +35,7 @@ class SectionsController < ApplicationController
 		@section = Section.find(params[:id])
 		@pages = Page.order('position ASC')
 		@section_count = Section.count
+		@categories = Category.all
 	end
 
 	def update
@@ -43,6 +46,7 @@ class SectionsController < ApplicationController
 		else
 			@pages = Page.order('position ASC')
 			@section_count = Section.count
+			@categories = Category.all
 			render('edit')
 		end
 	end
