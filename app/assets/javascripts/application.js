@@ -17,6 +17,3 @@
 //= require bootstrap.min
 //= require jqBootstrapValidation
 //= require_tree .
-
-
-@import "bootstrap";
