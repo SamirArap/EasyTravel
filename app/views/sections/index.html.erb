@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<p>You have <%= pluralize(@sections.size, 'section')%> </p>
+		<p>You have <%= pluralize(@sections.size, 'destination')%> </p>
 
 		<div class="row">
 			<div class="col-md-6"><%= link_to("Add new destination", {:action => 'new', :page_id => @page.id}, :class => "btn btn-default btn-block")%></div>
@@ -18,7 +18,7 @@
 			<div class="col-md-1"><h5>Return 		</h5></div>
 			<div class="col-md-1"><h5>Price 		</h5></div>
 			<div class="col-md-1"><h5>Trip 			</h5></div>
-			<div class="col-md-1"><h5>Tip 			</h5></div>
+			<div class="col-md-1"><h5>Category 		</h5></div>
 			<div class="col-md-1"><h5>Visible 		</h5></div>
 			<div class="col-md-2"> </div>
 		</div>
