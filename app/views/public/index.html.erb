@@ -1,5 +1,13 @@
 <% @page_title = 'Ruby on Rails' %>
 
+<div class="container">
+    <p>
+        We have <%= pluralize(@subjects.size, 'subject')%>, <%= pluralize(@pages.size, 'page')%>, and <%= pluralize(@sections.size, 'destination')%>
+
+    </p>
+</div>
+
+
  <!-- Header Carousel -->
    <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
@@ -13,21 +21,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
                 <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+                    <h3>Caption 1</h3>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
                 <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                    <h3>Caption 2</h3>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                    <h3>Caption 3</h3>
                 </div>
             </div>
         </div>
@@ -40,6 +48,8 @@
             <span class="icon-next"></span>
         </a>
     </header>
+
+
 
 
 <!-- Script to Activate the Carousel -->
