@@ -1,11 +1,10 @@
 <% @page_title = 'Ruby on Rails' %>
 
-<div class="container">
-    <p>
-        We have <%= pluralize(@subjects.size, 'subject')%>, <%= pluralize(@pages.size, 'page')%>, and <%= pluralize(@sections.size, 'destination')%>
+<div class="stomac">
 
-    </p>
-</div>
+    <div class="container">
+        <p>We have <%= pluralize(@subjects.size, 'subject')%>, <%= pluralize(@pages.size, 'page')%>, and <%= pluralize(@sections.size, 'destination')%></p>
+    </div>
 
 
  <!-- Header Carousel -->
@@ -49,9 +48,22 @@
         </a>
     </header>
 
+    <div class="container">
+        <h4>Our subjects</h4>
+        <div class="row">
+            <div class="col-md-4">Logo</div>
+            <div class="col-md-4">Name</div>
+        </div>
+        <% @subjects.each do |subject|%>
+        <div class="row">
+            <div class="col-md-4"><%= image_tag(subject.logo, size: "80x80")%></div>
+            <div class="col-md-4"><%= subject.name%></div>
+        </div>
+        <%end%>
+    </div>
+    
 
-
-
+</div>
 <!-- Script to Activate the Carousel -->
 <script>
     $('.carousel').carousel({

@@ -2,11 +2,12 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<h2>New section</h2>
+		<h2>New destination</h2>
 		
 		<%= form_for(:section, :url => {:action => 'create', :page_id => @page.id}) do |f| %>
 	
 			<%= render(:partial => 'form', :locals => {:f => f}) %>
+			
 
 			<div class="row">
 				<div class="col-md-4"><%= submit_tag("Add new destination", :class => "btn btn-default btn-block")%></div>

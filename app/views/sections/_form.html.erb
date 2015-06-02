@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="col-md-2"><%= f.label :page_id, "Page" %></div>
 	<div class="col-md-10"><%= f.text_field :page_id, :readonly => true, :class => "form-control" %></div>
@@ -12,9 +13,11 @@
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :departure %></div>
-	<div class="col-md-4"><%= f.text_field :departure, :id => "departure", :placeholder => "Click on field" %></div>
+	<div class="col-md-4"><%= f.text_field :departure,  :id => "departure", :placeholder => "Click on field" %></div>
+		
 	<div class="col-md-2"><%= f.label :return %></div>
-	<div class="col-md-4"><%= f.text_field :return, :id => "return", :placeholder => "Click on field" %></div>
+	<div class="col-md-4"><%= f.text_field :return, :id => "return", :placeholder => "Click on field" %></div>	
+	
 </div>
 <div class="row">
 	<div class="col-md-2"><%= f.label :price %></div>
@@ -29,7 +32,7 @@
 	<div class="col-md-2"><%= f.radio_button(:trip, :Other, :checked => false ,:class => "other") %> Other</div>	
 </div>
 <div class="row">
-	<div class="col-md-2"><%= f.label :tip %></div>
+	<div class="col-md-2"><%= f.label :tip, "Category" %></div>
 	<div class="col-md-10"><%= f.select :tip, @categories.collect{|s| [s.name, s.name]} %></div>
 </div>
 <div class="row">
@@ -40,18 +43,25 @@
 </div>
 <br>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 <script>
-	$(function() {
-	$( "#departure" ).datepicker();
-	});
-</script>
-
-<script>
-	$(function() {
-	$( "#return" ).datepicker();
-	});
+	$(function() {	
+		$( "#departure" ).datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 1,
+			onClose: function( selectedDate ) {
+			$( "#return" ).datepicker( "option", "minDate", selectedDate );
+			}
+			});
+		$( "#return" ).datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 1,
+			onClose: function( selectedDate ) {
+			$( "#departure" ).datepicker( "option", "maxDate", selectedDate );
+			}
+			});
+	});	
 </script>

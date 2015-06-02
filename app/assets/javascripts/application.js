@@ -16,4 +16,6 @@
 //= require bootstrap
 //= require bootstrap.min
 //= require jqBootstrapValidation
+//= require jquery.dcmegamenu.1.3
+//= require jquery.hoverIntent.minified
 //= require_tree .
