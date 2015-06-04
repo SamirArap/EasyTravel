@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap.min
+//= require flexslider
+//= require fwslider
+//= require jquery.flexslider
 //= require jqBootstrapValidation
 //= require jquery.dcmegamenu.1.3
 //= require jquery.hoverIntent.minified

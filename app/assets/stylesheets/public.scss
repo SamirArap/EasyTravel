@@ -13,15 +13,50 @@ h3 {
 	text-transform: uppercase;
 	color: #fff;
 	height: 130px;
-	padding: 15px
+	padding: 15px;
+}
+
+.hello { 
+	color: #2C3E50;
+	height: 50px;
+	padding: 5px;
+	//text-transform: uppercase;
+}
+
+.contact { 
+	background: #2C3E50;
+	color: #fff;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .stomac {
-	margin-top: 20px;
-	margin-bottom: 50px;
-	
+	margin-top: 5px;
+	margin-bottom: 15px;
+	background: #fff;
+	color: #2C3E50;
+	border-radius: 10px;
+	padding: 10px;
+	h2 {
+		color: #2C3E50;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	p {
+		color: #C0C0C0 ;
+	}
 }
 
+hr {
+	//display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 5px;
+    margin-right: 5px;
+    //border-style: inset;
+    border-width: 1px;
+    border-color: #D8D8D8;
+}
 
 /* status_tag */
 span.status { display: block; width: 20px; height: 20px;
@@ -41,6 +76,6 @@ footer {
 	color: #fff;
     width: 100%;
     height: 50px;
-    padding: 5px;
+    padding: 10px;
     bottom: 0px;    
 }

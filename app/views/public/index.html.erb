@@ -1,69 +1,389 @@
 <% @page_title = 'Ruby on Rails' %>
 
-<div class="stomac">
-
-    <div class="container">
-        <p>We have <%= pluralize(@subjects.size, 'subject')%>, <%= pluralize(@pages.size, 'page')%>, and <%= pluralize(@sections.size, 'destination')%></p>
+<div class="container">
+    <div class="hello">
+        <h4>We have <%= pluralize(@subjects.size, 'subject')%>, <%= pluralize(@pages.size, 'page')%>, and <%= pluralize(@sections.size, 'destination')%></h4>
     </div>
-
-
- <!-- Header Carousel -->
-   <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
-                <div class="carousel-caption">
-                    <h3>Caption 1</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
-                <div class="carousel-caption">
-                    <h3>Caption 2</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
-                <div class="carousel-caption">
-                    <h3>Caption 3</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
-
-    <div class="container">
-        <h4>Our subjects</h4>
-        <div class="row">
-            <div class="col-md-4">Logo</div>
-            <div class="col-md-4">Name</div>
-        </div>
-        <% @subjects.each do |subject|%>
-        <div class="row">
-            <div class="col-md-4"><%= image_tag(subject.logo, size: "80x80")%></div>
-            <div class="col-md-4"><%= subject.name%></div>
-        </div>
-        <%end%>
-    </div>
-    
-
 </div>
+
+<!-- Header Carousel -->
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
+            <div class="carousel-caption">
+                <h3>Caption 1</h3>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
+            <div class="carousel-caption">
+                <h3>Caption 2</h3>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill"><%= image_tag('header1.jpg', size: "1920x600")%></div>
+            <div class="carousel-caption">
+                <h3>Caption 3</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+
+<!-- Our offers -->        
+        <script>
+            $(function(){
+              SyntaxHighlighter.all();
+            });
+            $(window).load(function(){
+              $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,
+                itemWidth:250,
+                itemMargin: 5,
+                start: function(slider){
+                  $('body').removeClass('loading');
+                }
+              });
+            });
+        </script>
+<div class="offers">
+            <div class="offers-head">
+                <div class="container">
+                    <div class="stomac">
+                        <h2>Offers</h2>
+                        <p>Best offer ...</p>
+                    </div>
+                </div>
+            </div>
+    <section class="slider">
+            <div class="flexslider carousel">
+              <ul class="slides">
+                <li >
+                    <%= image_tag("airport.png") %>
+                    
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("bus.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("airport.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("bus.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("airport.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("bus.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("airport.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("airport.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("bus.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+                <li >
+                    <%= image_tag("airport.png") %>
+                    <!----place-caption-info---->
+                    <div class="caption-info">
+                         <div class="caption-info-head">
+                            <div class="caption-info-head-left">
+                                <h4><a href="#">Hong Kong & Macau</a></h4>
+                                <span>Bonus Extras!</span>
+                            </div>
+                            <div class="caption-info-head-right">
+                                <span> </span>
+                            </div>
+                            <div class="clear"> </div>
+                         </div>
+                    </div>
+                     <!----//place-caption-info---->
+                </li>
+              </ul>
+            </div>
+    </section>   
+          <!-- //End content_slider -->
+</div>
+<!-- Our offers --> 
+
+<hr>
+
+<!-- Our type -->
+<div class="container">
+    <div class="stomac">
+       <div class="wrap">
+    <div class="holiday-type-head">
+        <h2>Which tipy?</h2>
+        <span>... your dreams ... </span>
+    </div> <br>
+
+    <div class="row">
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+          <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+                <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+                <center>Sea</center>            </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+          
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag("palma1.jpg", :class => "img-circle", size: "180x140")%>
+            <center>Sea</center> 
+        </div>
+    </div>  
+</div> 
+    </div>
+</div>
+<!-- Our type --> 
+ 
+ <hr>
+
+<!-- Our clients -->
+<% if @subjects.any? %>
+<div class="container">
+  <div class="stomac">
+    <h2>Our clients</h2>
+      <% @subjects.in_groups_of(5) do |group| %>
+        <div class="row">
+          <% group.each do |subject| %>
+            <% if subject %>
+              <div class="col-md-2">
+                <div class="center">
+                    <%= link_to image_tag(subject.logo, size: "120x120")%>
+                </div>
+                <div class="caption">
+                    <h4><strong><%= subject.name%></strong></h4>
+                </div>
+              </div>
+            <%end%>
+          <%end%>
+        </div>
+      <%end%>  
+  </div>
+</div>   
+<%end%>
+<!-- End of our clients -->
+
+<hr>
+<!-- Contact -->
+<div class="container">
+    <div class="stomac">
+        <h2>Contact</h2>
+        <p>form for contact</p>
+        <div class="contact">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Address: xzxzxzxzxzxzx</p>
+                    <p>Address: xzxzxzxzxzxzx</p>
+                    <p>Address: xzxzxzxzxzxzx</p>
+                    <p>Address: xzxzxzxzxzxzx</p>
+                    <p>Address: xzxzxzxzxzxzx</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Subject</p>
+                    <p>Subject</p>
+                    <p>Subject</p>
+                    <p>Subject</p>
+                    <p>Subject</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Contact -->
+
+<!-- Empty -->
+<div class="container">
+    <div class="stomac">
+        <!-- Empty -->
+    </div>
+</div>
+<!-- Empty -->
+
 <!-- Script to Activate the Carousel -->
 <script>
     $('.carousel').carousel({
