@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
 
 	scope :visible, lambda { where(:visible => true) }
   	scope :invisible, lambda { where(:visible => false) }
+
+  	validates :name, :presence => true
 end

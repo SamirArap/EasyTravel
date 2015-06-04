@@ -8,4 +8,10 @@ class Subject < ActiveRecord::Base
 	scope :news_first, lambda { order("subjects.position DESC")}
 	scope :search,  lambda {|query|
 		where(["name LIKE ?", "%#{query }%"])}
+
+	validates :name, :presence => true,
+					 :length => {:maximum => 50}
+
+	validates :logo, :presence => true
+
 end

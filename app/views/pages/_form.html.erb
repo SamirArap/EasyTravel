@@ -1,3 +1,5 @@
+<%= error_messages_for(@page)%>
+
 <div class="row">
 		<div class="col-md-2"><%= f.label(:subject_id, "User")%></div>
 		<div class="col-md-10"><%= f.text_field(:subject_id,:readonly => true, :class => "form-control") %></div>			
